@@ -12,31 +12,32 @@ This project provides a virtual try-on experience by leveraging background remov
 ## Installation
 
 1. Clone the repository:
-   \`\`\`bash
-   git clone https://github.com/your-org/virtual-try-on.git
-   cd virtual-try-on
-   \`\`\`
 
-2. Install the required dependencies:
-   \`\`\`bash
+      git clone https://github.com/your-org/virtual-try-on.git
+   
+     cd virtual-try-on
+
+
+3. Install the required dependencies:
+
    pip install -r requirements.txt
-   \`\`\`
 
-3. Ensure you have the necessary model for inpainting downloaded:
-   \`\`\`python
+
+4. Ensure you have the necessary model for inpainting downloaded:
+
    from diffusers import AutoPipelineForInpainting
    pipeline = AutoPipelineForInpainting.from_pretrained(
        "runwayml/stable-diffusion-inpainting", torch_dtype=torch.float16, variant="fp16", safety_checker=None,
        requires_safety_checker=False
    ).to("cuda")
-   \`\`\`
+
 
 ## Usage
 
 1. Run the Streamlit application:
-   \`\`\`bash
+
    streamlit run app.py
-   \`\`\`
+
 
 2. Open your web browser and navigate to `http://localhost:8501`.
 
